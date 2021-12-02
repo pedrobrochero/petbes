@@ -27,3 +27,18 @@ linter:
 
 # Additional information about this file can be found at
 # https://dart.dev/guides/language/analysis-options
+analyzer:
+  exclude:
+    - lib/**/*.freezed.dart
+    - lib/**/*.g.dart
+    - lib/**/*.gr.dart
+    - lib/generated/intl/*
+    - pubspec.yaml
+    - lib/flavors.dart
+    - test/**/*.mocks.dart
+  errors:
+    invalid_annotation_target: ignore # For freezed annotations
+    missing_required_param: error
+    missing_return: error
+    parameter_assignments: error
+    use_setters_to_change_properties: ignore

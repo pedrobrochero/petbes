@@ -1,20 +1,25 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
-import 'package:petbes/ui/pages/home.dart';
-import 'package:petbes/ui/pages/login.dart';
-import 'package:petbes/ui/pages/sign_up.dart';
+import 'package:get/get.dart';
+import 'package:petbes/generated/l10n.dart';
+import 'package:petbes/ui/pages/adop_feed.dart';
+import 'package:petbes/ui/pages/feed.dart';
+import 'package:petbes/ui/pages/stories.dart';
 
 class DrawerComponent extends StatelessWidget {
-  const DrawerComponent({Key? key, this.currentRoute}) : super(key: key);
+  DrawerComponent({Key? key, this.currentRoute}) : super(key: key);
   final String? currentRoute;
+  final S s = Get.find();
 
   @override
   Widget build(BuildContext context) {
     final children = <Widget>[
-      _drawerTile(context, 'Sign up', SignUpUI.route, Icons.flutter_dash),
-      _drawerTile(context, 'Login', LoginUI.route, Icons.flutter_dash),
-      _drawerTile(context, 'Home', HomeUI.route, Icons.flutter_dash),
-      _drawerTile(context, 'Home', HomeUI.route, Icons.flutter_dash),
+      _drawerTile(context, s.home, FeedUI.route, Icons.feed),
+      _drawerTile(context, s.stories, StoriesUI.route,
+          Icons.local_fire_department_outlined),
+      _drawerTile(context, s.adopt, AdoptFeedUI.route, Icons.pets),
+      _drawerTile(context, s.chat, '', Icons.chat),
+      _drawerTile(context, s.location, '', Icons.location_on),
     ];
     return Drawer(child: ListView(children: children));
   }

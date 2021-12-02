@@ -309,6 +309,96 @@ class S {
       args: [],
     );
   }
+
+  /// `Inicio`
+  String get home {
+    return Intl.message(
+      'Inicio',
+      name: 'home',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Historias`
+  String get stories {
+    return Intl.message(
+      'Historias',
+      name: 'stories',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Adopta`
+  String get adopt {
+    return Intl.message(
+      'Adopta',
+      name: 'adopt',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Chatea`
+  String get chat {
+    return Intl.message(
+      'Chatea',
+      name: 'chat',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Ubicación`
+  String get location {
+    return Intl.message(
+      'Ubicación',
+      name: 'location',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `años`
+  String get years {
+    return Intl.message(
+      'años',
+      name: 'years',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Ciudad`
+  String get city {
+    return Intl.message(
+      'Ciudad',
+      name: 'city',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `¿Aún no tienes cuenta? Regístrate.`
+  String get signUpNow {
+    return Intl.message(
+      '¿Aún no tienes cuenta? Regístrate.',
+      name: 'signUpNow',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `No hay más historias para mostrar`
+  String get noMoreStories {
+    return Intl.message(
+      'No hay más historias para mostrar',
+      name: 'noMoreStories',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

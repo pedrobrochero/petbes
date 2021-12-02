@@ -25,5 +25,14 @@
   "register": "Registráte",
   "signUpMessage": "¡Has parte de nuestra comunidad, y conoce gente con tus mismas pasiones!",
   "name": "Nombre",
-  "confirmPassword": "Confirmar contraseña"
+  "confirmPassword": "Confirmar contraseña",
+  "home": "Inicio",
+  "stories": "Historias",
+  "adopt": "Adopta",
+  "chat": "Chatea",
+  "location": "Ubicación",
+  "years": "años",
+  "city": "Ciudad",
+  "signUpNow": "¿Aún no tienes cuenta? Regístrate.",
+  "noMoreStories": "No hay más historias para mostrar"
 }

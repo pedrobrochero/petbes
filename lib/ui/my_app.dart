@@ -1,10 +1,10 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
-import 'package:petbes/ui/pages/feed.dart';
+import 'package:get/get.dart';
+import 'package:petbes/ui/pages/login.dart';
 
 import '../generated/l10n.dart';
-import '../misc/service_locator.dart';
 import '../routing.dart' as routing;
 
 class MyApp extends StatelessWidget {
@@ -15,9 +15,9 @@ class MyApp extends StatelessWidget {
         title: 'Petbes',
         // debugShowCheckedModeBanner: !kReleaseMode,
         debugShowCheckedModeBanner: false,
-        home: const FeedUI(),
+        home: const LoginUI(),
         routes: routing.routes,
-        theme: sl(),
+        theme: Get.find<ThemeData>(),
         localizationsDelegates: const [
           GlobalMaterialLocalizations.delegate,
           GlobalWidgetsLocalizations.delegate,

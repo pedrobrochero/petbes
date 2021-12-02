@@ -26,9 +26,12 @@ class MessageLookup extends MessageLookupByLibrary {
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
+        "adopt": MessageLookupByLibrary.simpleMessage("Adopta"),
         "appName": MessageLookupByLibrary.simpleMessage("PetBes"),
         "authExInvalidEmail":
             MessageLookupByLibrary.simpleMessage("Ingrese un correo válido."),
+        "chat": MessageLookupByLibrary.simpleMessage("Chatea"),
+        "city": MessageLookupByLibrary.simpleMessage("Ciudad"),
         "commonOk": MessageLookupByLibrary.simpleMessage("OK"),
         "confirmPassword":
             MessageLookupByLibrary.simpleMessage("Confirmar contraseña"),
@@ -46,15 +49,22 @@ class MessageLookup extends MessageLookupByLibrary {
             "Debe ser un número positivo."),
         "formExShouldSelect": MessageLookupByLibrary.simpleMessage(
             "Debe seleccionar un elemento."),
+        "home": MessageLookupByLibrary.simpleMessage("Inicio"),
+        "location": MessageLookupByLibrary.simpleMessage("Ubicación"),
         "login": MessageLookupByLibrary.simpleMessage("Inicia sesión"),
         "mail": MessageLookupByLibrary.simpleMessage("Correo"),
         "name": MessageLookupByLibrary.simpleMessage("Nombre"),
+        "noMoreStories": MessageLookupByLibrary.simpleMessage(
+            "No hay más historias para mostrar"),
         "password": MessageLookupByLibrary.simpleMessage("Contraseña"),
         "register": MessageLookupByLibrary.simpleMessage("Registráte"),
         "signUpMessage": MessageLookupByLibrary.simpleMessage(
             "¡Has parte de nuestra comunidad, y conoce gente con tus mismas pasiones!"),
+        "signUpNow": MessageLookupByLibrary.simpleMessage(
+            "¿Aún no tienes cuenta? Regístrate."),
         "slogan": MessageLookupByLibrary.simpleMessage(
             "Para los amantes de las mascotas"),
+        "stories": MessageLookupByLibrary.simpleMessage("Historias"),
         "timeLapseDaysAgo": m0,
         "timeLapseDaysLater": m1,
         "timeLapseToday": MessageLookupByLibrary.simpleMessage("Hoy"),
@@ -65,6 +75,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "timeRangeLast30Days":
             MessageLookupByLibrary.simpleMessage("Últimos 30 días"),
         "timeRangeLast7Days":
-            MessageLookupByLibrary.simpleMessage("Últimos 7 días")
+            MessageLookupByLibrary.simpleMessage("Últimos 7 días"),
+        "years": MessageLookupByLibrary.simpleMessage("años")
       };
 }

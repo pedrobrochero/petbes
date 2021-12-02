@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:petbes/generated/l10n.dart';
-import 'package:petbes/misc/service_locator.dart';
 import 'package:petbes/ui/_components/spacers_components.dart';
+
+import 'feed.dart';
 
 class SignUpUI extends StatelessWidget {
   static const route = 'sign_up';
@@ -9,7 +11,7 @@ class SignUpUI extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final s = sl<S>();
+    final S s = Get.find();
     return Scaffold(
         body: Center(
             child: SingleChildScrollView(
@@ -47,7 +49,10 @@ class SignUpUI extends StatelessWidget {
           ),
           Spacers.verticalM,
           // Submit
-          ElevatedButton(onPressed: () {}, child: Text(s.register))
+          ElevatedButton(
+              onPressed: () => Navigator.pushNamedAndRemoveUntil(
+                  context, FeedUI.route, (_) => false),
+              child: Text(s.register))
         ],
       ),
     ))));
