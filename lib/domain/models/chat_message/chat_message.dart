@@ -8,9 +8,9 @@ abstract class ChatMessage with _$ChatMessage {
   const factory ChatMessage({
     required String id,
     required String content,
-    required String sender,
-    required String receiver,
-    required DateTime sentBy,
+    required String senderId,
+    required String receiverId,
+    required DateTime sentAt,
   }) = _ChatMessage;
 
   factory ChatMessage.fromJson(Map<String, dynamic> json) =>

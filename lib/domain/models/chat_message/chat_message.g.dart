@@ -10,9 +10,9 @@ _$_ChatMessage _$_$_ChatMessageFromJson(Map<String, dynamic> json) {
   return _$_ChatMessage(
     id: json['id'] as String,
     content: json['content'] as String,
-    sender: json['sender'] as String,
-    receiver: json['receiver'] as String,
-    sentBy: DateTime.parse(json['sentBy'] as String),
+    senderId: json['senderId'] as String,
+    receiverId: json['receiverId'] as String,
+    sentAt: DateTime.parse(json['sentAt'] as String),
   );
 }
 
@@ -20,7 +20,7 @@ Map<String, dynamic> _$_$_ChatMessageToJson(_$_ChatMessage instance) =>
     <String, dynamic>{
       'id': instance.id,
       'content': instance.content,
-      'sender': instance.sender,
-      'receiver': instance.receiver,
-      'sentBy': instance.sentBy.toIso8601String(),
+      'senderId': instance.senderId,
+      'receiverId': instance.receiverId,
+      'sentAt': instance.sentAt.toIso8601String(),
     };

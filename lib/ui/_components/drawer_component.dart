@@ -3,7 +3,9 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:petbes/generated/l10n.dart';
 import 'package:petbes/ui/pages/adop_feed.dart';
+import 'package:petbes/ui/pages/chat_list.dart';
 import 'package:petbes/ui/pages/feed.dart';
+import 'package:petbes/ui/pages/settings.dart';
 import 'package:petbes/ui/pages/stories.dart';
 
 class DrawerComponent extends StatelessWidget {
@@ -18,8 +20,8 @@ class DrawerComponent extends StatelessWidget {
       _drawerTile(context, s.stories, StoriesUI.route,
           Icons.local_fire_department_outlined),
       _drawerTile(context, s.adopt, AdoptFeedUI.route, Icons.pets),
-      _drawerTile(context, s.chat, '', Icons.chat),
-      _drawerTile(context, s.location, '', Icons.location_on),
+      _drawerTile(context, s.chat, ChatListUI.route, Icons.chat),
+      _drawerTile(context, s.settings, SettingsUI.route, Icons.settings),
     ];
     return Drawer(child: ListView(children: children));
   }

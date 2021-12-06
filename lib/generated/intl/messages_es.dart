@@ -35,6 +35,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "commonOk": MessageLookupByLibrary.simpleMessage("OK"),
         "confirmPassword":
             MessageLookupByLibrary.simpleMessage("Confirmar contraseña"),
+        "darkMode": MessageLookupByLibrary.simpleMessage("Modo oscuro"),
         "formExAtLeastOneValue": MessageLookupByLibrary.simpleMessage(
             "Debe incluir al menos un valor."),
         "formExEmpty": MessageLookupByLibrary.simpleMessage(
@@ -53,11 +54,13 @@ class MessageLookup extends MessageLookupByLibrary {
         "location": MessageLookupByLibrary.simpleMessage("Ubicación"),
         "login": MessageLookupByLibrary.simpleMessage("Inicia sesión"),
         "mail": MessageLookupByLibrary.simpleMessage("Correo"),
+        "myChats": MessageLookupByLibrary.simpleMessage("Mis chats"),
         "name": MessageLookupByLibrary.simpleMessage("Nombre"),
         "noMoreStories": MessageLookupByLibrary.simpleMessage(
             "No hay más historias para mostrar"),
         "password": MessageLookupByLibrary.simpleMessage("Contraseña"),
         "register": MessageLookupByLibrary.simpleMessage("Registráte"),
+        "settings": MessageLookupByLibrary.simpleMessage("Opciones"),
         "signUpMessage": MessageLookupByLibrary.simpleMessage(
             "¡Has parte de nuestra comunidad, y conoce gente con tus mismas pasiones!"),
         "signUpNow": MessageLookupByLibrary.simpleMessage(

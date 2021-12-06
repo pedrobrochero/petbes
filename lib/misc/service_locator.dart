@@ -2,6 +2,7 @@ import 'package:get/get.dart';
 import 'package:petbes/domain/controllers/adopt_controller.dart';
 import 'package:petbes/domain/controllers/auth_controller.dart';
 import 'package:petbes/domain/controllers/chat_controller.dart';
+import 'package:petbes/domain/controllers/chat_list_controller.dart';
 import 'package:petbes/domain/controllers/feed_controller.dart';
 import 'package:petbes/domain/controllers/location_controller.dart';
 import 'package:petbes/domain/controllers/stories_controller.dart';
@@ -17,6 +18,7 @@ void init() {
   Get.lazyPut(() => FeedController());
   Get.lazyPut(() => StoriesController());
   Get.lazyPut(() => AdoptController());
+  Get.lazyPut(() => ChatListController());
   Get.lazyPut(() => ChatController());
   Get.lazyPut(() => LocationController());
 }

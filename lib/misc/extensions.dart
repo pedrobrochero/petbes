@@ -52,4 +52,6 @@ extension DateTimeExt on DateTime {
     }
     return shortDate;
   }
+
+  String get time => DateFormat.Hm().format(this);
 }

@@ -399,6 +399,36 @@ class S {
       args: [],
     );
   }
+
+  /// `Opciones`
+  String get settings {
+    return Intl.message(
+      'Opciones',
+      name: 'settings',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Mis chats`
+  String get myChats {
+    return Intl.message(
+      'Mis chats',
+      name: 'myChats',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Modo oscuro`
+  String get darkMode {
+    return Intl.message(
+      'Modo oscuro',
+      name: 'darkMode',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

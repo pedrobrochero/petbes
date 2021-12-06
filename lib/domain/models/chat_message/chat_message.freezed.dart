@@ -23,15 +23,15 @@ class _$ChatMessageTearOff {
   _ChatMessage call(
       {required String id,
       required String content,
-      required String sender,
-      required String receiver,
-      required DateTime sentBy}) {
+      required String senderId,
+      required String receiverId,
+      required DateTime sentAt}) {
     return _ChatMessage(
       id: id,
       content: content,
-      sender: sender,
-      receiver: receiver,
-      sentBy: sentBy,
+      senderId: senderId,
+      receiverId: receiverId,
+      sentAt: sentAt,
     );
   }
 
@@ -47,9 +47,9 @@ const $ChatMessage = _$ChatMessageTearOff();
 mixin _$ChatMessage {
   String get id => throw _privateConstructorUsedError;
   String get content => throw _privateConstructorUsedError;
-  String get sender => throw _privateConstructorUsedError;
-  String get receiver => throw _privateConstructorUsedError;
-  DateTime get sentBy => throw _privateConstructorUsedError;
+  String get senderId => throw _privateConstructorUsedError;
+  String get receiverId => throw _privateConstructorUsedError;
+  DateTime get sentAt => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -65,9 +65,9 @@ abstract class $ChatMessageCopyWith<$Res> {
   $Res call(
       {String id,
       String content,
-      String sender,
-      String receiver,
-      DateTime sentBy});
+      String senderId,
+      String receiverId,
+      DateTime sentAt});
 }
 
 /// @nodoc
@@ -82,9 +82,9 @@ class _$ChatMessageCopyWithImpl<$Res> implements $ChatMessageCopyWith<$Res> {
   $Res call({
     Object? id = freezed,
     Object? content = freezed,
-    Object? sender = freezed,
-    Object? receiver = freezed,
-    Object? sentBy = freezed,
+    Object? senderId = freezed,
+    Object? receiverId = freezed,
+    Object? sentAt = freezed,
   }) {
     return _then(_value.copyWith(
       id: id == freezed
@@ -95,17 +95,17 @@ class _$ChatMessageCopyWithImpl<$Res> implements $ChatMessageCopyWith<$Res> {
           ? _value.content
           : content // ignore: cast_nullable_to_non_nullable
               as String,
-      sender: sender == freezed
-          ? _value.sender
-          : sender // ignore: cast_nullable_to_non_nullable
+      senderId: senderId == freezed
+          ? _value.senderId
+          : senderId // ignore: cast_nullable_to_non_nullable
               as String,
-      receiver: receiver == freezed
-          ? _value.receiver
-          : receiver // ignore: cast_nullable_to_non_nullable
+      receiverId: receiverId == freezed
+          ? _value.receiverId
+          : receiverId // ignore: cast_nullable_to_non_nullable
               as String,
-      sentBy: sentBy == freezed
-          ? _value.sentBy
-          : sentBy // ignore: cast_nullable_to_non_nullable
+      sentAt: sentAt == freezed
+          ? _value.sentAt
+          : sentAt // ignore: cast_nullable_to_non_nullable
               as DateTime,
     ));
   }
@@ -121,9 +121,9 @@ abstract class _$ChatMessageCopyWith<$Res>
   $Res call(
       {String id,
       String content,
-      String sender,
-      String receiver,
-      DateTime sentBy});
+      String senderId,
+      String receiverId,
+      DateTime sentAt});
 }
 
 /// @nodoc
@@ -140,9 +140,9 @@ class __$ChatMessageCopyWithImpl<$Res> extends _$ChatMessageCopyWithImpl<$Res>
   $Res call({
     Object? id = freezed,
     Object? content = freezed,
-    Object? sender = freezed,
-    Object? receiver = freezed,
-    Object? sentBy = freezed,
+    Object? senderId = freezed,
+    Object? receiverId = freezed,
+    Object? sentAt = freezed,
   }) {
     return _then(_ChatMessage(
       id: id == freezed
@@ -153,17 +153,17 @@ class __$ChatMessageCopyWithImpl<$Res> extends _$ChatMessageCopyWithImpl<$Res>
           ? _value.content
           : content // ignore: cast_nullable_to_non_nullable
               as String,
-      sender: sender == freezed
-          ? _value.sender
-          : sender // ignore: cast_nullable_to_non_nullable
+      senderId: senderId == freezed
+          ? _value.senderId
+          : senderId // ignore: cast_nullable_to_non_nullable
               as String,
-      receiver: receiver == freezed
-          ? _value.receiver
-          : receiver // ignore: cast_nullable_to_non_nullable
+      receiverId: receiverId == freezed
+          ? _value.receiverId
+          : receiverId // ignore: cast_nullable_to_non_nullable
               as String,
-      sentBy: sentBy == freezed
-          ? _value.sentBy
-          : sentBy // ignore: cast_nullable_to_non_nullable
+      sentAt: sentAt == freezed
+          ? _value.sentAt
+          : sentAt // ignore: cast_nullable_to_non_nullable
               as DateTime,
     ));
   }
@@ -175,9 +175,9 @@ class _$_ChatMessage implements _ChatMessage {
   const _$_ChatMessage(
       {required this.id,
       required this.content,
-      required this.sender,
-      required this.receiver,
-      required this.sentBy});
+      required this.senderId,
+      required this.receiverId,
+      required this.sentAt});
 
   factory _$_ChatMessage.fromJson(Map<String, dynamic> json) =>
       _$_$_ChatMessageFromJson(json);
@@ -187,15 +187,15 @@ class _$_ChatMessage implements _ChatMessage {
   @override
   final String content;
   @override
-  final String sender;
+  final String senderId;
   @override
-  final String receiver;
+  final String receiverId;
   @override
-  final DateTime sentBy;
+  final DateTime sentAt;
 
   @override
   String toString() {
-    return 'ChatMessage(id: $id, content: $content, sender: $sender, receiver: $receiver, sentBy: $sentBy)';
+    return 'ChatMessage(id: $id, content: $content, senderId: $senderId, receiverId: $receiverId, sentAt: $sentAt)';
   }
 
   @override
@@ -207,13 +207,14 @@ class _$_ChatMessage implements _ChatMessage {
             (identical(other.content, content) ||
                 const DeepCollectionEquality()
                     .equals(other.content, content)) &&
-            (identical(other.sender, sender) ||
-                const DeepCollectionEquality().equals(other.sender, sender)) &&
-            (identical(other.receiver, receiver) ||
+            (identical(other.senderId, senderId) ||
                 const DeepCollectionEquality()
-                    .equals(other.receiver, receiver)) &&
-            (identical(other.sentBy, sentBy) ||
-                const DeepCollectionEquality().equals(other.sentBy, sentBy)));
+                    .equals(other.senderId, senderId)) &&
+            (identical(other.receiverId, receiverId) ||
+                const DeepCollectionEquality()
+                    .equals(other.receiverId, receiverId)) &&
+            (identical(other.sentAt, sentAt) ||
+                const DeepCollectionEquality().equals(other.sentAt, sentAt)));
   }
 
   @override
@@ -221,9 +222,9 @@ class _$_ChatMessage implements _ChatMessage {
       runtimeType.hashCode ^
       const DeepCollectionEquality().hash(id) ^
       const DeepCollectionEquality().hash(content) ^
-      const DeepCollectionEquality().hash(sender) ^
-      const DeepCollectionEquality().hash(receiver) ^
-      const DeepCollectionEquality().hash(sentBy);
+      const DeepCollectionEquality().hash(senderId) ^
+      const DeepCollectionEquality().hash(receiverId) ^
+      const DeepCollectionEquality().hash(sentAt);
 
   @JsonKey(ignore: true)
   @override
@@ -240,9 +241,9 @@ abstract class _ChatMessage implements ChatMessage {
   const factory _ChatMessage(
       {required String id,
       required String content,
-      required String sender,
-      required String receiver,
-      required DateTime sentBy}) = _$_ChatMessage;
+      required String senderId,
+      required String receiverId,
+      required DateTime sentAt}) = _$_ChatMessage;
 
   factory _ChatMessage.fromJson(Map<String, dynamic> json) =
       _$_ChatMessage.fromJson;
@@ -252,11 +253,11 @@ abstract class _ChatMessage implements ChatMessage {
   @override
   String get content => throw _privateConstructorUsedError;
   @override
-  String get sender => throw _privateConstructorUsedError;
+  String get senderId => throw _privateConstructorUsedError;
   @override
-  String get receiver => throw _privateConstructorUsedError;
+  String get receiverId => throw _privateConstructorUsedError;
   @override
-  DateTime get sentBy => throw _privateConstructorUsedError;
+  DateTime get sentAt => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
   _$ChatMessageCopyWith<_ChatMessage> get copyWith =>

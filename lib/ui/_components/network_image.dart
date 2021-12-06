@@ -1,12 +1,17 @@
 import 'package:flutter/material.dart';
 
 class MyNetworkImage extends StatelessWidget {
-  const MyNetworkImage(this.url, {Key? key}) : super(key: key);
-  final String url;
+  const MyNetworkImage(
+    this.url, {
+    this.fit,
+    Key? key,
+  }) : super(key: key);
+  final String? url;
+  final BoxFit? fit;
 
   @override
   Widget build(BuildContext context) {
-    return Image.network(url,
+    return Image.network(url ?? '',
         errorBuilder: (context, error, stackTrace) => Center(
               child: ConstrainedBox(
                   constraints:
@@ -26,6 +31,6 @@ class MyNetworkImage extends StatelessWidget {
                 : null,
           ));
         },
-        fit: BoxFit.cover);
+        fit: fit ?? BoxFit.cover);
   }
 }

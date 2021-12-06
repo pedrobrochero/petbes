@@ -34,5 +34,8 @@
   "years": "años",
   "city": "Ciudad",
   "signUpNow": "¿Aún no tienes cuenta? Regístrate.",
-  "noMoreStories": "No hay más historias para mostrar"
+  "noMoreStories": "No hay más historias para mostrar",
+  "settings": "Opciones",
+  "myChats": "Mis chats",
+  "darkMode": "Modo oscuro"
 }
