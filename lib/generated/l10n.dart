@@ -429,6 +429,46 @@ class S {
       args: [],
     );
   }
+
+  /// `Cerrar sesión`
+  String get logout {
+    return Intl.message(
+      'Cerrar sesión',
+      name: 'logout',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Ha ocurrido un error al iniciar la app, por favor reiniciala.`
+  String get exInitializacion {
+    return Intl.message(
+      'Ha ocurrido un error al iniciar la app, por favor reiniciala.',
+      name: 'exInitializacion',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Ha ocurrido un error desconocido.`
+  String get exUnknown {
+    return Intl.message(
+      'Ha ocurrido un error desconocido.',
+      name: 'exUnknown',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Las contraseñas no coinciden.`
+  String get exPasswordDoNotMatch {
+    return Intl.message(
+      'Las contraseñas no coinciden.',
+      name: 'exPasswordDoNotMatch',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

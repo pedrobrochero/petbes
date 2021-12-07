@@ -36,6 +36,12 @@ class MessageLookup extends MessageLookupByLibrary {
         "confirmPassword":
             MessageLookupByLibrary.simpleMessage("Confirmar contraseña"),
         "darkMode": MessageLookupByLibrary.simpleMessage("Modo oscuro"),
+        "exInitializacion": MessageLookupByLibrary.simpleMessage(
+            "Ha ocurrido un error al iniciar la app, por favor reiniciala."),
+        "exPasswordDoNotMatch": MessageLookupByLibrary.simpleMessage(
+            "Las contraseñas no coinciden."),
+        "exUnknown": MessageLookupByLibrary.simpleMessage(
+            "Ha ocurrido un error desconocido."),
         "formExAtLeastOneValue": MessageLookupByLibrary.simpleMessage(
             "Debe incluir al menos un valor."),
         "formExEmpty": MessageLookupByLibrary.simpleMessage(
@@ -53,6 +59,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "home": MessageLookupByLibrary.simpleMessage("Inicio"),
         "location": MessageLookupByLibrary.simpleMessage("Ubicación"),
         "login": MessageLookupByLibrary.simpleMessage("Inicia sesión"),
+        "logout": MessageLookupByLibrary.simpleMessage("Cerrar sesión"),
         "mail": MessageLookupByLibrary.simpleMessage("Correo"),
         "myChats": MessageLookupByLibrary.simpleMessage("Mis chats"),
         "name": MessageLookupByLibrary.simpleMessage("Nombre"),

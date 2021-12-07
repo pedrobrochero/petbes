@@ -37,5 +37,9 @@
   "noMoreStories": "No hay más historias para mostrar",
   "settings": "Opciones",
   "myChats": "Mis chats",
-  "darkMode": "Modo oscuro"
+  "darkMode": "Modo oscuro",
+  "logout": "Cerrar sesión",
+  "exInitializacion": "Ha ocurrido un error al iniciar la app, por favor reiniciala.",
+  "exUnknown": "Ha ocurrido un error desconocido.",
+  "exPasswordDoNotMatch": "Las contraseñas no coinciden."
 }

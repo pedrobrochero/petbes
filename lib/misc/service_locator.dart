@@ -10,7 +10,7 @@ import 'package:petbes/domain/controllers/stories_controller.dart';
 import '../generated/l10n.dart';
 import '../ui/theme.dart';
 
-void init() {
+Future<void> init() async {
   Get.put(AppTheme.mainTheme());
   Get.lazyPut(() => S.current);
   // Controllers

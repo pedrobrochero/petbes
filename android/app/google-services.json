@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "824100033472",
+    "project_id": "petbes-b7480",
+    "storage_bucket": "petbes-b7480.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:824100033472:android:6dd90d5b220197a3252e25",
+        "android_client_info": {
+          "package_name": "com.misionmintic2021.petbes"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "824100033472-6gsvicrh9o9hqe8igg0r3a2lslgaoh9d.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.misionmintic2021.petbes",
+            "certificate_hash": "0c53e774e394629a1ff9cb2ca42a499bffb9a4ed"
+          }
+        },
+        {
+          "client_id": "824100033472-5ek41vl1cntv5bse7fsjusllll9jql0i.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAgKArnKku5sA0M51S41EyfZ5rXpvGXqLk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "824100033472-5ek41vl1cntv5bse7fsjusllll9jql0i.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
