@@ -11,8 +11,8 @@ final routes = <String, WidgetBuilder>{
   SettingsUI.route: (BuildContext context) => const SettingsUI(),
   ChatListUI.route: (BuildContext context) => const ChatListUI(),
   AdoptFeedUI.route: (BuildContext context) => AdoptFeedUI(),
-  FeedUI.route: (BuildContext context) => FeedUI(),
-  StoriesUI.route: (BuildContext context) => StoriesUI(),
+  FeedUI.route: (BuildContext context) => const FeedUI(),
+  StoriesUI.route: (BuildContext context) => const StoriesUI(),
   SignUpUI.route: (BuildContext context) => const SignUpUI(),
   LoginUI.route: (BuildContext context) => const LoginUI(),
 };

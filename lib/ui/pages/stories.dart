@@ -35,45 +35,60 @@ class _StoriesUIState extends State<StoriesUI> {
         drawer: DrawerComponent(currentRoute: StoriesUI.route),
         floatingActionButton: _fab(context),
         body: Obx(
-          () => PageView.builder(
-            controller: pagerController,
-            itemCount: controller.entries.length,
-            itemBuilder: (context, index) {
-              return GestureDetector(
-                  onTap: () {
-                    if (pagerController.page! < controller.entries.length - 1) {
-                      pagerController.animateToPage(
-                          pagerController.page!.toInt() + 1,
-                          duration: const Duration(milliseconds: 300),
-                          curve: Curves.easeInOutQuart);
-                    } else {
-                      ScaffoldMessenger.of(context).showSnackBar(
-                          SnackBar(content: Text(s.noMoreStories)));
-                    }
+          () => controller.entries.isEmpty
+              ? Center(
+                  child: Padding(
+                    padding: const EdgeInsets.all(24.0),
+                    child: Text(
+                      S.of(context).noStories,
+                      textAlign: TextAlign.center,
+                      style: Theme.of(context).textTheme.headline4,
+                    ),
+                  ),
+                )
+              : PageView.builder(
+                  controller: pagerController,
+                  itemCount: controller.entries.length,
+                  itemBuilder: (context, index) {
+                    return GestureDetector(
+                        onTap: () {
+                          if (pagerController.page! <
+                              controller.entries.length - 1) {
+                            pagerController.animateToPage(
+                                pagerController.page!.toInt() + 1,
+                                duration: const Duration(milliseconds: 300),
+                                curve: Curves.easeInOutQuart);
+                          } else {
+                            ScaffoldMessenger.of(context).showSnackBar(
+                                SnackBar(content: Text(s.noMoreStories)));
+                          }
+                        },
+                        child: Card(
+                            color: controller.entries.elementAt(index).color,
+                            child: Stack(
+                              alignment: Alignment.center,
+                              children: [
+                                Padding(
+                                  padding: const EdgeInsets.symmetric(
+                                      horizontal: 32),
+                                  child: Text(
+                                    controller.entries.elementAt(index).content,
+                                    textAlign: TextAlign.center,
+                                    style:
+                                        Theme.of(context).textTheme.headline3,
+                                  ),
+                                ),
+                                Positioned(
+                                    top: 16,
+                                    child: Text(
+                                      '@${controller.entries.elementAt(index).posterName} - ${controller.entries.elementAt(index).postedAt.lapse}',
+                                      style:
+                                          Theme.of(context).textTheme.overline,
+                                    ))
+                              ],
+                            )));
                   },
-                  child: Card(
-                      color: controller.entries.elementAt(index).color,
-                      child: Stack(
-                        alignment: Alignment.center,
-                        children: [
-                          Padding(
-                            padding: const EdgeInsets.symmetric(horizontal: 32),
-                            child: Text(
-                              controller.entries.elementAt(index).content,
-                              textAlign: TextAlign.center,
-                              style: Theme.of(context).textTheme.headline3,
-                            ),
-                          ),
-                          Positioned(
-                              top: 16,
-                              child: Text(
-                                '@${controller.entries.elementAt(index).posterName} - ${controller.entries.elementAt(index).postedAt.lapse}',
-                                style: Theme.of(context).textTheme.overline,
-                              ))
-                        ],
-                      )));
-            },
-          ),
+                ),
         ));
   }
 
@@ -82,7 +97,8 @@ class _StoriesUIState extends State<StoriesUI> {
         foregroundColor: Colors.white,
         actions: [
           IconButton(
-              onPressed: controller.getInitialData, icon: Icon(Icons.refresh))
+              onPressed: controller.getInitialData,
+              icon: const Icon(Icons.refresh))
         ],
       );
 

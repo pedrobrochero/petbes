@@ -10,10 +10,10 @@
   "formExNotAmount": "Ingrese un monto válido.",
   "formExNotNumberNotEmpty": "Este campo debe ser un número o estar vacío.",
   "formExShouldSelect": "Debe seleccionar un elemento.",
-  
   "justNow": "Justo ahora",
-  "nSecondsAgo": "Hace {n} segundos",
-  "nMinutesAgo": "Hace {n} minutos",
+  "nSecondsAgo": "Hace {n} segundo(s)",
+  "nMinutesAgo": "Hace {n} minuto(s)",
+  "nHoursAgo": "Hace {n} hora(s)",
   "timeLapseToday": "Hoy",
   "timeLapseDaysAgo": "Hace {n} días",
   "timeLapseDaysLater": "En {n} días",
@@ -48,5 +48,8 @@
   "exUnknown": "Ha ocurrido un error desconocido.",
   "exPasswordDoNotMatch": "Las contraseñas no coinciden.",
   "postStory": "Crear historia",
-  "postStoryHint": "¿Qué estás pensando?"
+  "post": "Publicar",
+  "postStoryHint": "¿Qué estás pensando?",
+  "noStories": "No hay ninguna historia de las últimas 24 horas",
+  "addDescription": "Añade una descripción"
 }

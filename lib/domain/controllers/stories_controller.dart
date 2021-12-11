@@ -21,7 +21,8 @@ class StoriesController extends GetxController with Logging {
   getInitialData() async {
     try {
       _stories.clear();
-      final list = await _firestore.getList<Story>('stories', handler: (json) {
+      final list = await _firestore.getList<Story>('stories', fromLast24h: true,
+          handler: (json) {
         json['postedAt'] =
             (json['postedAt'] as Timestamp).toDate().toIso8601String();
         return Story.fromJson(json);

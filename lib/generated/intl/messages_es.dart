@@ -20,16 +20,20 @@ typedef String MessageIfAbsent(String messageStr, List<dynamic> args);
 class MessageLookup extends MessageLookupByLibrary {
   String get localeName => 'es';
 
-  static String m0(n) => "Hace ${n} minutos";
+  static String m0(n) => "Hace ${n} hora(s)";
 
-  static String m1(n) => "Hace ${n} segundos";
+  static String m1(n) => "Hace ${n} minuto(s)";
 
-  static String m2(n) => "Hace ${n} días";
+  static String m2(n) => "Hace ${n} segundo(s)";
 
-  static String m3(n) => "En ${n} días";
+  static String m3(n) => "Hace ${n} días";
+
+  static String m4(n) => "En ${n} días";
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
+        "addDescription":
+            MessageLookupByLibrary.simpleMessage("Añade una descripción"),
         "adopt": MessageLookupByLibrary.simpleMessage("Adopta"),
         "appName": MessageLookupByLibrary.simpleMessage("PetBes"),
         "authExInvalidEmail":
@@ -68,12 +72,16 @@ class MessageLookup extends MessageLookupByLibrary {
         "logout": MessageLookupByLibrary.simpleMessage("Cerrar sesión"),
         "mail": MessageLookupByLibrary.simpleMessage("Correo"),
         "myChats": MessageLookupByLibrary.simpleMessage("Mis chats"),
-        "nMinutesAgo": m0,
-        "nSecondsAgo": m1,
+        "nHoursAgo": m0,
+        "nMinutesAgo": m1,
+        "nSecondsAgo": m2,
         "name": MessageLookupByLibrary.simpleMessage("Nombre"),
         "noMoreStories": MessageLookupByLibrary.simpleMessage(
             "No hay más historias para mostrar"),
+        "noStories": MessageLookupByLibrary.simpleMessage(
+            "No hay ninguna historia de las últimas 24 horas"),
         "password": MessageLookupByLibrary.simpleMessage("Contraseña"),
+        "post": MessageLookupByLibrary.simpleMessage("Publicar"),
         "postStory": MessageLookupByLibrary.simpleMessage("Crear historia"),
         "postStoryHint":
             MessageLookupByLibrary.simpleMessage("¿Qué estás pensando?"),
@@ -86,8 +94,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "slogan": MessageLookupByLibrary.simpleMessage(
             "Para los amantes de las mascotas"),
         "stories": MessageLookupByLibrary.simpleMessage("Historias"),
-        "timeLapseDaysAgo": m2,
-        "timeLapseDaysLater": m3,
+        "timeLapseDaysAgo": m3,
+        "timeLapseDaysLater": m4,
         "timeLapseToday": MessageLookupByLibrary.simpleMessage("Hoy"),
         "timeLapseTomorrow": MessageLookupByLibrary.simpleMessage("Mañana"),
         "timeLapseYesterday": MessageLookupByLibrary.simpleMessage("Ayer"),

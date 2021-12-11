@@ -170,21 +170,31 @@ class S {
     );
   }
 
-  /// `Hace {n} segundos`
+  /// `Hace {n} segundo(s)`
   String nSecondsAgo(Object n) {
     return Intl.message(
-      'Hace $n segundos',
+      'Hace $n segundo(s)',
       name: 'nSecondsAgo',
       desc: '',
       args: [n],
     );
   }
 
-  /// `Hace {n} minutos`
+  /// `Hace {n} minuto(s)`
   String nMinutesAgo(Object n) {
     return Intl.message(
-      'Hace $n minutos',
+      'Hace $n minuto(s)',
       name: 'nMinutesAgo',
+      desc: '',
+      args: [n],
+    );
+  }
+
+  /// `Hace {n} hora(s)`
+  String nHoursAgo(Object n) {
+    return Intl.message(
+      'Hace $n hora(s)',
+      name: 'nHoursAgo',
       desc: '',
       args: [n],
     );
@@ -520,11 +530,41 @@ class S {
     );
   }
 
+  /// `Publicar`
+  String get post {
+    return Intl.message(
+      'Publicar',
+      name: 'post',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `¿Qué estás pensando?`
   String get postStoryHint {
     return Intl.message(
       '¿Qué estás pensando?',
       name: 'postStoryHint',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `No hay ninguna historia de las últimas 24 horas`
+  String get noStories {
+    return Intl.message(
+      'No hay ninguna historia de las últimas 24 horas',
+      name: 'noStories',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Añade una descripción`
+  String get addDescription {
+    return Intl.message(
+      'Añade una descripción',
+      name: 'addDescription',
       desc: '',
       args: [],
     );

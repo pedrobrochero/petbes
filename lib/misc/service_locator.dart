@@ -1,5 +1,7 @@
 import 'package:get/get.dart';
 import 'package:petbes/data/firestore._service.dart';
+import 'package:petbes/data/image_picker_service.dart';
+import 'package:petbes/data/storage_service.dart';
 import 'package:petbes/domain/controllers/adopt_controller.dart';
 import 'package:petbes/domain/controllers/auth_controller.dart';
 import 'package:petbes/domain/controllers/chat_controller.dart';
@@ -16,6 +18,8 @@ Future<void> init() async {
   Get.lazyPut(() => S.current);
   // Service
   Get.lazyPut(() => FirestoreService());
+  Get.lazyPut(() => FirebaseStorageService());
+  Get.lazyPut(() => ImagePickerService());
   // Controllers
   Get.lazyPut(() => AuthController());
   Get.lazyPut(() => FeedController());

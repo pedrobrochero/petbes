@@ -1,25 +1,43 @@
+import 'dart:io';
+
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:petbes/data/image_picker_service.dart';
 import 'package:petbes/domain/controllers/feed_controller.dart';
 import 'package:petbes/domain/models/post/post.dart';
 import 'package:petbes/generated/l10n.dart';
 import 'package:petbes/ui/_components/drawer_component.dart';
+import 'package:petbes/ui/_components/field_dialog_component.dart';
 import 'package:petbes/ui/_components/network_image.dart';
 import 'package:petbes/ui/_components/spacers_components.dart';
 
 import '../../misc/extensions.dart';
 
-class FeedUI extends StatelessWidget {
+class FeedUI extends StatefulWidget {
   static const route = 'feed';
-  FeedUI({Key? key}) : super(key: key);
+  const FeedUI({Key? key}) : super(key: key);
+
+  @override
+  State<FeedUI> createState() => _FeedUIState();
+}
+
+class _FeedUIState extends State<FeedUI> {
   final FeedController _controller = Get.find();
+
   final S s = Get.find();
+  final ImagePickerService _imagePicker = Get.find();
+
+  @override
+  void initState() {
+    _controller.getInitialData();
+    super.initState();
+  }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: _appBar(),
-        drawer: DrawerComponent(currentRoute: route),
+        drawer: DrawerComponent(currentRoute: FeedUI.route),
         backgroundColor: Colors.grey.shade100,
         floatingActionButton: _fab(context),
         body: SafeArea(
@@ -35,8 +53,15 @@ class FeedUI extends StatelessWidget {
         ));
   }
 
-  AppBar _appBar() =>
-      AppBar(title: Text(s.home), foregroundColor: Colors.white);
+  AppBar _appBar() => AppBar(
+        title: Text(s.home),
+        foregroundColor: Colors.white,
+        actions: [
+          IconButton(
+              onPressed: _controller.getInitialData,
+              icon: const Icon(Icons.refresh))
+        ],
+      );
 
   Container _post(BuildContext context, Post post) {
     return Container(
@@ -101,7 +126,21 @@ class FeedUI extends StatelessWidget {
 
   _fab(BuildContext context) {
     return FloatingActionButton(
-      onPressed: _controller.postPost,
+      onPressed: () async {
+        final file = await _imagePicker.pickImageFromGallery();
+        if (file == null) {
+          return;
+        }
+        final caption = await showDialog(
+            context: context,
+            builder: (context) => FieldDialogComponent(
+                  submitLabel: s.post,
+                  hintText: s.addDescription,
+                ));
+        if (caption is String && caption.isNotEmpty) {
+          _controller.postPost(caption, File(file.path));
+        }
+      },
       child: const Icon(Icons.add, color: Colors.white),
     );
   }

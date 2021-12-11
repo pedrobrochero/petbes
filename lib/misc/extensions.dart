@@ -32,23 +32,30 @@ extension DateTimeExt on DateTime {
   String get lapse {
     var diff = difference(DateTime.now());
     final days = diff.abs().inDays;
+
     diff = diff - Duration(days: days);
     final hours = diff.abs().inHours;
+
     diff = diff - Duration(hours: hours);
     final minutes = diff.abs().inMinutes;
+
     diff = diff - Duration(minutes: minutes);
     final seconds = diff.abs().inSeconds;
+
     if (days == 0) {
-      if (seconds < 10) {
-        return S.current.justNow;
+      if (hours == 0) {
+        if (minutes == 0) {
+          if (seconds < 10) {
+            return S.current.justNow;
+          } else {
+            return S.current.nSecondsAgo(seconds);
+          }
+        } else {
+          return S.current.nMinutesAgo(minutes);
+        }
+      } else {
+        return S.current.nHoursAgo(hours);
       }
-      if (seconds < 60) {
-        return S.current.nSecondsAgo(seconds);
-      }
-      if (minutes < 60) {
-        return S.current.nMinutesAgo(minutes);
-      }
-      return S.current.timeLapseToday;
     }
     if (days == 1) {
       if (diff.inDays < 0) {
