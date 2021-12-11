@@ -20,9 +20,13 @@ typedef String MessageIfAbsent(String messageStr, List<dynamic> args);
 class MessageLookup extends MessageLookupByLibrary {
   String get localeName => 'es';
 
-  static String m0(n) => "Hace ${n} días";
+  static String m0(n) => "Hace ${n} minutos";
 
-  static String m1(n) => "En ${n} días";
+  static String m1(n) => "Hace ${n} segundos";
+
+  static String m2(n) => "Hace ${n} días";
+
+  static String m3(n) => "En ${n} días";
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
@@ -32,6 +36,7 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Ingrese un correo válido."),
         "chat": MessageLookupByLibrary.simpleMessage("Chatea"),
         "city": MessageLookupByLibrary.simpleMessage("Ciudad"),
+        "commonCancel": MessageLookupByLibrary.simpleMessage("Cancelar"),
         "commonOk": MessageLookupByLibrary.simpleMessage("OK"),
         "confirmPassword":
             MessageLookupByLibrary.simpleMessage("Confirmar contraseña"),
@@ -57,15 +62,21 @@ class MessageLookup extends MessageLookupByLibrary {
         "formExShouldSelect": MessageLookupByLibrary.simpleMessage(
             "Debe seleccionar un elemento."),
         "home": MessageLookupByLibrary.simpleMessage("Inicio"),
+        "justNow": MessageLookupByLibrary.simpleMessage("Justo ahora"),
         "location": MessageLookupByLibrary.simpleMessage("Ubicación"),
         "login": MessageLookupByLibrary.simpleMessage("Inicia sesión"),
         "logout": MessageLookupByLibrary.simpleMessage("Cerrar sesión"),
         "mail": MessageLookupByLibrary.simpleMessage("Correo"),
         "myChats": MessageLookupByLibrary.simpleMessage("Mis chats"),
+        "nMinutesAgo": m0,
+        "nSecondsAgo": m1,
         "name": MessageLookupByLibrary.simpleMessage("Nombre"),
         "noMoreStories": MessageLookupByLibrary.simpleMessage(
             "No hay más historias para mostrar"),
         "password": MessageLookupByLibrary.simpleMessage("Contraseña"),
+        "postStory": MessageLookupByLibrary.simpleMessage("Crear historia"),
+        "postStoryHint":
+            MessageLookupByLibrary.simpleMessage("¿Qué estás pensando?"),
         "register": MessageLookupByLibrary.simpleMessage("Registráte"),
         "settings": MessageLookupByLibrary.simpleMessage("Opciones"),
         "signUpMessage": MessageLookupByLibrary.simpleMessage(
@@ -75,8 +86,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "slogan": MessageLookupByLibrary.simpleMessage(
             "Para los amantes de las mascotas"),
         "stories": MessageLookupByLibrary.simpleMessage("Historias"),
-        "timeLapseDaysAgo": m0,
-        "timeLapseDaysLater": m1,
+        "timeLapseDaysAgo": m2,
+        "timeLapseDaysLater": m3,
         "timeLapseToday": MessageLookupByLibrary.simpleMessage("Hoy"),
         "timeLapseTomorrow": MessageLookupByLibrary.simpleMessage("Mañana"),
         "timeLapseYesterday": MessageLookupByLibrary.simpleMessage("Ayer"),

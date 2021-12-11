@@ -13,6 +13,7 @@ _$_Story _$_$_StoryFromJson(Map<String, dynamic> json) {
     posterId: json['posterId'] as String,
     posterName: json['posterName'] as String,
     postedAt: DateTime.parse(json['postedAt'] as String),
+    color: colorFromJson(json['color'] as String),
   );
 }
 
@@ -22,4 +23,5 @@ Map<String, dynamic> _$_$_StoryToJson(_$_Story instance) => <String, dynamic>{
       'posterId': instance.posterId,
       'posterName': instance.posterName,
       'postedAt': instance.postedAt.toIso8601String(),
+      'color': colorToJson(instance.color),
     };

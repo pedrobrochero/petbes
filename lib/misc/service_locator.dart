@@ -1,4 +1,5 @@
 import 'package:get/get.dart';
+import 'package:petbes/data/firestore._service.dart';
 import 'package:petbes/domain/controllers/adopt_controller.dart';
 import 'package:petbes/domain/controllers/auth_controller.dart';
 import 'package:petbes/domain/controllers/chat_controller.dart';
@@ -13,6 +14,8 @@ import '../ui/theme.dart';
 Future<void> init() async {
   Get.put(AppTheme.mainTheme());
   Get.lazyPut(() => S.current);
+  // Service
+  Get.lazyPut(() => FirestoreService());
   // Controllers
   Get.lazyPut(() => AuthController());
   Get.lazyPut(() => FeedController());

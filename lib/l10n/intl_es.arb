@@ -1,6 +1,7 @@
 {
   "login": "Inicia sesión",
   "commonOk": "OK",
+  "commonCancel": "Cancelar",
   "authExInvalidEmail": "Ingrese un correo válido.",
   "formExEmpty": "Este campo no puede estar vacío.",
   "formExAtLeastOneValue": "Debe incluir al menos un valor.",
@@ -9,6 +10,10 @@
   "formExNotAmount": "Ingrese un monto válido.",
   "formExNotNumberNotEmpty": "Este campo debe ser un número o estar vacío.",
   "formExShouldSelect": "Debe seleccionar un elemento.",
+  
+  "justNow": "Justo ahora",
+  "nSecondsAgo": "Hace {n} segundos",
+  "nMinutesAgo": "Hace {n} minutos",
   "timeLapseToday": "Hoy",
   "timeLapseDaysAgo": "Hace {n} días",
   "timeLapseDaysLater": "En {n} días",
@@ -41,5 +46,7 @@
   "logout": "Cerrar sesión",
   "exInitializacion": "Ha ocurrido un error al iniciar la app, por favor reiniciala.",
   "exUnknown": "Ha ocurrido un error desconocido.",
-  "exPasswordDoNotMatch": "Las contraseñas no coinciden."
+  "exPasswordDoNotMatch": "Las contraseñas no coinciden.",
+  "postStory": "Crear historia",
+  "postStoryHint": "¿Qué estás pensando?"
 }

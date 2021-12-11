@@ -25,13 +25,16 @@ class _$StoryTearOff {
       required String content,
       required String posterId,
       required String posterName,
-      required DateTime postedAt}) {
+      required DateTime postedAt,
+      @JsonKey(toJson: colorToJson, fromJson: colorFromJson)
+          required Color color}) {
     return _Story(
       id: id,
       content: content,
       posterId: posterId,
       posterName: posterName,
       postedAt: postedAt,
+      color: color,
     );
   }
 
@@ -50,6 +53,8 @@ mixin _$Story {
   String get posterId => throw _privateConstructorUsedError;
   String get posterName => throw _privateConstructorUsedError;
   DateTime get postedAt => throw _privateConstructorUsedError;
+  @JsonKey(toJson: colorToJson, fromJson: colorFromJson)
+  Color get color => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -65,7 +70,8 @@ abstract class $StoryCopyWith<$Res> {
       String content,
       String posterId,
       String posterName,
-      DateTime postedAt});
+      DateTime postedAt,
+      @JsonKey(toJson: colorToJson, fromJson: colorFromJson) Color color});
 }
 
 /// @nodoc
@@ -83,6 +89,7 @@ class _$StoryCopyWithImpl<$Res> implements $StoryCopyWith<$Res> {
     Object? posterId = freezed,
     Object? posterName = freezed,
     Object? postedAt = freezed,
+    Object? color = freezed,
   }) {
     return _then(_value.copyWith(
       id: id == freezed
@@ -105,6 +112,10 @@ class _$StoryCopyWithImpl<$Res> implements $StoryCopyWith<$Res> {
           ? _value.postedAt
           : postedAt // ignore: cast_nullable_to_non_nullable
               as DateTime,
+      color: color == freezed
+          ? _value.color
+          : color // ignore: cast_nullable_to_non_nullable
+              as Color,
     ));
   }
 }
@@ -119,7 +130,8 @@ abstract class _$StoryCopyWith<$Res> implements $StoryCopyWith<$Res> {
       String content,
       String posterId,
       String posterName,
-      DateTime postedAt});
+      DateTime postedAt,
+      @JsonKey(toJson: colorToJson, fromJson: colorFromJson) Color color});
 }
 
 /// @nodoc
@@ -138,6 +150,7 @@ class __$StoryCopyWithImpl<$Res> extends _$StoryCopyWithImpl<$Res>
     Object? posterId = freezed,
     Object? posterName = freezed,
     Object? postedAt = freezed,
+    Object? color = freezed,
   }) {
     return _then(_Story(
       id: id == freezed
@@ -160,6 +173,10 @@ class __$StoryCopyWithImpl<$Res> extends _$StoryCopyWithImpl<$Res>
           ? _value.postedAt
           : postedAt // ignore: cast_nullable_to_non_nullable
               as DateTime,
+      color: color == freezed
+          ? _value.color
+          : color // ignore: cast_nullable_to_non_nullable
+              as Color,
     ));
   }
 }
@@ -172,7 +189,9 @@ class _$_Story implements _Story {
       required this.content,
       required this.posterId,
       required this.posterName,
-      required this.postedAt});
+      required this.postedAt,
+      @JsonKey(toJson: colorToJson, fromJson: colorFromJson)
+          required this.color});
 
   factory _$_Story.fromJson(Map<String, dynamic> json) =>
       _$_$_StoryFromJson(json);
@@ -187,10 +206,13 @@ class _$_Story implements _Story {
   final String posterName;
   @override
   final DateTime postedAt;
+  @override
+  @JsonKey(toJson: colorToJson, fromJson: colorFromJson)
+  final Color color;
 
   @override
   String toString() {
-    return 'Story(id: $id, content: $content, posterId: $posterId, posterName: $posterName, postedAt: $postedAt)';
+    return 'Story(id: $id, content: $content, posterId: $posterId, posterName: $posterName, postedAt: $postedAt, color: $color)';
   }
 
   @override
@@ -210,7 +232,9 @@ class _$_Story implements _Story {
                     .equals(other.posterName, posterName)) &&
             (identical(other.postedAt, postedAt) ||
                 const DeepCollectionEquality()
-                    .equals(other.postedAt, postedAt)));
+                    .equals(other.postedAt, postedAt)) &&
+            (identical(other.color, color) ||
+                const DeepCollectionEquality().equals(other.color, color)));
   }
 
   @override
@@ -220,7 +244,8 @@ class _$_Story implements _Story {
       const DeepCollectionEquality().hash(content) ^
       const DeepCollectionEquality().hash(posterId) ^
       const DeepCollectionEquality().hash(posterName) ^
-      const DeepCollectionEquality().hash(postedAt);
+      const DeepCollectionEquality().hash(postedAt) ^
+      const DeepCollectionEquality().hash(color);
 
   @JsonKey(ignore: true)
   @override
@@ -239,7 +264,9 @@ abstract class _Story implements Story {
       required String content,
       required String posterId,
       required String posterName,
-      required DateTime postedAt}) = _$_Story;
+      required DateTime postedAt,
+      @JsonKey(toJson: colorToJson, fromJson: colorFromJson)
+          required Color color}) = _$_Story;
 
   factory _Story.fromJson(Map<String, dynamic> json) = _$_Story.fromJson;
 
@@ -253,6 +280,9 @@ abstract class _Story implements Story {
   String get posterName => throw _privateConstructorUsedError;
   @override
   DateTime get postedAt => throw _privateConstructorUsedError;
+  @override
+  @JsonKey(toJson: colorToJson, fromJson: colorFromJson)
+  Color get color => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
   _$StoryCopyWith<_Story> get copyWith => throw _privateConstructorUsedError;

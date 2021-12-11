@@ -29,7 +29,10 @@ class DrawerComponent extends StatelessWidget {
       ListTile(
           title: Text(s.logout),
           trailing: const Icon(Icons.exit_to_app),
-          onTap: authController.logout)
+          onTap: () async {
+            await authController.logout();
+            Get.offNamedUntil('/', ModalRoute.withName('/home'));
+          })
     ];
     return Drawer(child: ListView(children: children));
   }

@@ -70,6 +70,16 @@ class S {
     );
   }
 
+  /// `Cancelar`
+  String get commonCancel {
+    return Intl.message(
+      'Cancelar',
+      name: 'commonCancel',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `Ingrese un correo válido.`
   String get authExInvalidEmail {
     return Intl.message(
@@ -147,6 +157,36 @@ class S {
       name: 'formExShouldSelect',
       desc: '',
       args: [],
+    );
+  }
+
+  /// `Justo ahora`
+  String get justNow {
+    return Intl.message(
+      'Justo ahora',
+      name: 'justNow',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Hace {n} segundos`
+  String nSecondsAgo(Object n) {
+    return Intl.message(
+      'Hace $n segundos',
+      name: 'nSecondsAgo',
+      desc: '',
+      args: [n],
+    );
+  }
+
+  /// `Hace {n} minutos`
+  String nMinutesAgo(Object n) {
+    return Intl.message(
+      'Hace $n minutos',
+      name: 'nMinutesAgo',
+      desc: '',
+      args: [n],
     );
   }
 
@@ -465,6 +505,26 @@ class S {
     return Intl.message(
       'Las contraseñas no coinciden.',
       name: 'exPasswordDoNotMatch',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Crear historia`
+  String get postStory {
+    return Intl.message(
+      'Crear historia',
+      name: 'postStory',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `¿Qué estás pensando?`
+  String get postStoryHint {
+    return Intl.message(
+      '¿Qué estás pensando?',
+      name: 'postStoryHint',
       desc: '',
       args: [],
     );
