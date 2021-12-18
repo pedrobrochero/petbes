@@ -569,6 +569,16 @@ class S {
       args: [],
     );
   }
+
+  /// `Edad desconocida`
+  String get unknownAge {
+    return Intl.message(
+      'Edad desconocida',
+      name: 'unknownAge',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

@@ -51,5 +51,6 @@
   "post": "Publicar",
   "postStoryHint": "¿Qué estás pensando?",
   "noStories": "No hay ninguna historia de las últimas 24 horas",
-  "addDescription": "Añade una descripción"
+  "addDescription": "Añade una descripción",
+  "unknownAge": "Edad desconocida"
 }

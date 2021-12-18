@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:petbes/domain/controllers/auth_controller.dart';
 import 'package:petbes/generated/l10n.dart';
-import 'package:petbes/ui/pages/adop_feed.dart';
+import 'package:petbes/ui/pages/adopt_feed.dart';
 import 'package:petbes/ui/pages/chat_list.dart';
 import 'package:petbes/ui/pages/feed.dart';
 import 'package:petbes/ui/pages/settings.dart';
@@ -49,13 +49,13 @@ class DrawerComponent extends StatelessWidget {
             ? Icon(iconData,
                 color: isCurrentRoute
                     ? Theme.of(context).colorScheme.secondary
-                    : Colors.black54)
+                    : Theme.of(context).colorScheme.onPrimary)
             : null,
         title: Text(label,
             style: TextStyle(
                 color: isCurrentRoute
                     ? Theme.of(context).colorScheme.secondary
-                    : Colors.black87)),
+                    : Theme.of(context).colorScheme.onPrimary)),
         onTap: () {
           Navigator.pop(context);
           if (!isCurrentRoute) Navigator.pushReplacementNamed(context, route);

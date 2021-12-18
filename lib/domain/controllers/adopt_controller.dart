@@ -1,47 +1,47 @@
-import 'package:faker/faker.dart';
 import 'package:get/get.dart';
+import 'package:petbes/data/adoption_service.dart';
 import 'package:petbes/domain/models/adopt_post/adopt_post.dart';
+import 'package:petbes/misc/logging.dart';
 
-class AdoptController extends GetxController {
+class AdoptController extends GetxController with Logging {
   AdoptController() {
-    getInitialData();
+    getData(isInitial: true);
   }
+  final AdoptionService _adoptApi = Get.find();
   final _posts = <AdoptPost>[].obs;
+  int currentPage = 1;
+  bool gettingData = false;
 
   List<AdoptPost> get entries => _posts;
 
-  getInitialData() {
-    final list = <AdoptPost>[];
-    list.add(_dummyPost());
-    list.add(_dummyPost());
-    list.add(_dummyPost());
-    list.add(_dummyPost());
-    list.add(_dummyPost());
-    list.add(_dummyPost());
-    list.add(_dummyPost());
-    list.add(_dummyPost());
-    list.add(_dummyPost());
-    list.add(_dummyPost());
-    list.add(_dummyPost());
-    list.add(_dummyPost());
-    list.add(_dummyPost());
-    list.add(_dummyPost());
-    list.add(_dummyPost());
-    list.add(_dummyPost());
-    list.add(_dummyPost());
-    list.add(_dummyPost());
-    list.add(_dummyPost());
-    list.add(_dummyPost());
-    entries.addAll(list);
+  getData({bool isInitial = false}) async {
+    if (gettingData) {
+      return;
+    }
+    gettingData = true;
+    try {
+      log.d('getting data');
+      if (isInitial) {
+        _posts.clear();
+        currentPage = 1;
+      }
+      final list = await _adoptApi.getPets(currentPage);
+      currentPage++;
+      _posts.addAll(list);
+    } catch (e) {
+      log.e(e);
+    } finally {
+      gettingData = false;
+    }
   }
 
-  AdoptPost _dummyPost() {
-    return AdoptPost(
-        id: 'id',
-        imageUrl:
-            'https://picsum.photos/id/${faker.randomGenerator.integer(1000)}/500',
-        city: faker.address.city(),
-        petAge: faker.randomGenerator.integer(14),
-        petName: faker.person.firstName());
-  }
+  // AdoptPost _dummyPost() {
+  //   return AdoptPost(
+  //       id: 'id',
+  //       imageUrl:
+  //           'https://picsum.photos/id/${faker.randomGenerator.integer(1000)}/500',
+  //       city: faker.address.city(),
+  //       petAge: faker.randomGenerator.integer(14),
+  //       petName: faker.person.firstName());
+  // }
 }

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:petbes/ui/pages/adop_feed.dart';
+import 'package:petbes/ui/pages/adopt_feed.dart';
 import 'package:petbes/ui/pages/chat_list.dart';
 import 'package:petbes/ui/pages/feed.dart';
 import 'package:petbes/ui/pages/login.dart';

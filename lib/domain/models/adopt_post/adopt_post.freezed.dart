@@ -24,13 +24,13 @@ class _$AdoptPostTearOff {
       {required String id,
       required String imageUrl,
       required String petName,
-      required String city,
-      required int petAge}) {
+      required Sex sex,
+      required DateTime? petAge}) {
     return _AdoptPost(
       id: id,
       imageUrl: imageUrl,
       petName: petName,
-      city: city,
+      sex: sex,
       petAge: petAge,
     );
   }
@@ -48,8 +48,8 @@ mixin _$AdoptPost {
   String get id => throw _privateConstructorUsedError;
   String get imageUrl => throw _privateConstructorUsedError;
   String get petName => throw _privateConstructorUsedError;
-  String get city => throw _privateConstructorUsedError;
-  int get petAge => throw _privateConstructorUsedError;
+  Sex get sex => throw _privateConstructorUsedError;
+  DateTime? get petAge => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -62,7 +62,7 @@ abstract class $AdoptPostCopyWith<$Res> {
   factory $AdoptPostCopyWith(AdoptPost value, $Res Function(AdoptPost) then) =
       _$AdoptPostCopyWithImpl<$Res>;
   $Res call(
-      {String id, String imageUrl, String petName, String city, int petAge});
+      {String id, String imageUrl, String petName, Sex sex, DateTime? petAge});
 }
 
 /// @nodoc
@@ -78,7 +78,7 @@ class _$AdoptPostCopyWithImpl<$Res> implements $AdoptPostCopyWith<$Res> {
     Object? id = freezed,
     Object? imageUrl = freezed,
     Object? petName = freezed,
-    Object? city = freezed,
+    Object? sex = freezed,
     Object? petAge = freezed,
   }) {
     return _then(_value.copyWith(
@@ -94,14 +94,14 @@ class _$AdoptPostCopyWithImpl<$Res> implements $AdoptPostCopyWith<$Res> {
           ? _value.petName
           : petName // ignore: cast_nullable_to_non_nullable
               as String,
-      city: city == freezed
-          ? _value.city
-          : city // ignore: cast_nullable_to_non_nullable
-              as String,
+      sex: sex == freezed
+          ? _value.sex
+          : sex // ignore: cast_nullable_to_non_nullable
+              as Sex,
       petAge: petAge == freezed
           ? _value.petAge
           : petAge // ignore: cast_nullable_to_non_nullable
-              as int,
+              as DateTime?,
     ));
   }
 }
@@ -113,7 +113,7 @@ abstract class _$AdoptPostCopyWith<$Res> implements $AdoptPostCopyWith<$Res> {
       __$AdoptPostCopyWithImpl<$Res>;
   @override
   $Res call(
-      {String id, String imageUrl, String petName, String city, int petAge});
+      {String id, String imageUrl, String petName, Sex sex, DateTime? petAge});
 }
 
 /// @nodoc
@@ -130,7 +130,7 @@ class __$AdoptPostCopyWithImpl<$Res> extends _$AdoptPostCopyWithImpl<$Res>
     Object? id = freezed,
     Object? imageUrl = freezed,
     Object? petName = freezed,
-    Object? city = freezed,
+    Object? sex = freezed,
     Object? petAge = freezed,
   }) {
     return _then(_AdoptPost(
@@ -146,14 +146,14 @@ class __$AdoptPostCopyWithImpl<$Res> extends _$AdoptPostCopyWithImpl<$Res>
           ? _value.petName
           : petName // ignore: cast_nullable_to_non_nullable
               as String,
-      city: city == freezed
-          ? _value.city
-          : city // ignore: cast_nullable_to_non_nullable
-              as String,
+      sex: sex == freezed
+          ? _value.sex
+          : sex // ignore: cast_nullable_to_non_nullable
+              as Sex,
       petAge: petAge == freezed
           ? _value.petAge
           : petAge // ignore: cast_nullable_to_non_nullable
-              as int,
+              as DateTime?,
     ));
   }
 }
@@ -165,7 +165,7 @@ class _$_AdoptPost implements _AdoptPost {
       {required this.id,
       required this.imageUrl,
       required this.petName,
-      required this.city,
+      required this.sex,
       required this.petAge});
 
   factory _$_AdoptPost.fromJson(Map<String, dynamic> json) =>
@@ -178,13 +178,13 @@ class _$_AdoptPost implements _AdoptPost {
   @override
   final String petName;
   @override
-  final String city;
+  final Sex sex;
   @override
-  final int petAge;
+  final DateTime? petAge;
 
   @override
   String toString() {
-    return 'AdoptPost(id: $id, imageUrl: $imageUrl, petName: $petName, city: $city, petAge: $petAge)';
+    return 'AdoptPost(id: $id, imageUrl: $imageUrl, petName: $petName, sex: $sex, petAge: $petAge)';
   }
 
   @override
@@ -199,8 +199,8 @@ class _$_AdoptPost implements _AdoptPost {
             (identical(other.petName, petName) ||
                 const DeepCollectionEquality()
                     .equals(other.petName, petName)) &&
-            (identical(other.city, city) ||
-                const DeepCollectionEquality().equals(other.city, city)) &&
+            (identical(other.sex, sex) ||
+                const DeepCollectionEquality().equals(other.sex, sex)) &&
             (identical(other.petAge, petAge) ||
                 const DeepCollectionEquality().equals(other.petAge, petAge)));
   }
@@ -211,7 +211,7 @@ class _$_AdoptPost implements _AdoptPost {
       const DeepCollectionEquality().hash(id) ^
       const DeepCollectionEquality().hash(imageUrl) ^
       const DeepCollectionEquality().hash(petName) ^
-      const DeepCollectionEquality().hash(city) ^
+      const DeepCollectionEquality().hash(sex) ^
       const DeepCollectionEquality().hash(petAge);
 
   @JsonKey(ignore: true)
@@ -230,8 +230,8 @@ abstract class _AdoptPost implements AdoptPost {
       {required String id,
       required String imageUrl,
       required String petName,
-      required String city,
-      required int petAge}) = _$_AdoptPost;
+      required Sex sex,
+      required DateTime? petAge}) = _$_AdoptPost;
 
   factory _AdoptPost.fromJson(Map<String, dynamic> json) =
       _$_AdoptPost.fromJson;
@@ -243,9 +243,9 @@ abstract class _AdoptPost implements AdoptPost {
   @override
   String get petName => throw _privateConstructorUsedError;
   @override
-  String get city => throw _privateConstructorUsedError;
+  Sex get sex => throw _privateConstructorUsedError;
   @override
-  int get petAge => throw _privateConstructorUsedError;
+  DateTime? get petAge => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
   _$AdoptPostCopyWith<_AdoptPost> get copyWith =>

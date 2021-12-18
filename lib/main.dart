@@ -4,6 +4,7 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:get/get.dart';
+import 'package:petbes/data/shared_prefs_service.dart';
 import 'package:petbes/ui/pages/feed.dart';
 import 'package:petbes/ui/pages/login.dart';
 import 'package:petbes/ui/pages/splashscreen.dart';
@@ -12,8 +13,9 @@ import '../generated/l10n.dart';
 import '../misc/service_locator.dart' as sl;
 import '../routing.dart' as routing;
 
-void main() {
+void main() async {
   WidgetsFlutterBinding.ensureInitialized();
+  await SharedPrefsService.init();
   runApp(const MyApp());
 }
 
@@ -53,7 +55,9 @@ class MyApp extends StatelessWidget {
             return const SplashScreen();
           }),
       routes: routing.routes,
-      theme: Get.find<ThemeData>(),
+      theme: Get.find<SharedPrefsService>().isDarkMode
+          ? ThemeData.dark()
+          : Get.find<ThemeData>(),
       localizationsDelegates: const [
         GlobalMaterialLocalizations.delegate,
         GlobalWidgetsLocalizations.delegate,

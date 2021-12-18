@@ -105,6 +105,7 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Últimos 30 días"),
         "timeRangeLast7Days":
             MessageLookupByLibrary.simpleMessage("Últimos 7 días"),
+        "unknownAge": MessageLookupByLibrary.simpleMessage("Edad desconocida"),
         "years": MessageLookupByLibrary.simpleMessage("años")
       };
 }
