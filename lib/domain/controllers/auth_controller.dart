@@ -27,10 +27,10 @@ class AuthController extends GetxController with Logging {
   signup(String name, String email, String password) async {
     try {
       signupStatus.value = const Status.loading();
-      final userCredentials = await _firebase.createUserWithEmailAndPassword(
+      await _firebase.createUserWithEmailAndPassword(
           email: email, password: password);
       Get.back();
-      await userCredentials.user?.updateDisplayName(name);
+      await _firebase.currentUser?.updateDisplayName(name);
       signupStatus.value = const Status.success();
     } catch (e) {
       signupStatus.value = Status.error(s.exUnknown);

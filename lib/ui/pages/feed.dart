@@ -137,7 +137,7 @@ class _FeedUIState extends State<FeedUI> {
                   submitLabel: s.post,
                   hintText: s.addDescription,
                 ));
-        if (caption is String && caption.isNotEmpty) {
+        if (caption is String) {
           _controller.postPost(caption, File(file.path));
         }
       },

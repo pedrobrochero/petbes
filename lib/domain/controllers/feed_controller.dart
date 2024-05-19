@@ -32,7 +32,7 @@ class FeedController extends GetxController with Logging {
     }
   }
 
-  postPost(String content, File file) async {
+  postPost(String? content, File file) async {
     try {
       final url = await _storage.uploadImage(file);
       final id = _uuid.v4();

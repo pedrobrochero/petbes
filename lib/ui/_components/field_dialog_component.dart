@@ -51,7 +51,7 @@ class _FieldDialogComponentState extends State<FieldDialogComponent> {
         ),
         TextButton(
           onPressed: () {
-            final s = controller.text.isNotEmpty ? controller.text : true;
+            final s = controller.text;
             Navigator.pop(context, s);
           },
           child: Text(submitLabel),

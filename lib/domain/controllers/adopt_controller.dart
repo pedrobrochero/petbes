@@ -34,14 +34,4 @@ class AdoptController extends GetxController with Logging {
       gettingData = false;
     }
   }
-
-  // AdoptPost _dummyPost() {
-  //   return AdoptPost(
-  //       id: 'id',
-  //       imageUrl:
-  //           'https://picsum.photos/id/${faker.randomGenerator.integer(1000)}/500',
-  //       city: faker.address.city(),
-  //       petAge: faker.randomGenerator.integer(14),
-  //       petName: faker.person.firstName());
-  // }
 }
